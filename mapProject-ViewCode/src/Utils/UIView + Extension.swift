@@ -26,7 +26,7 @@ extension UIView { // tudo que herda de UIView, temos sombras do card e constrai
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
         
-            topAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.topAnchor),
+            topAnchor.constraint(equalTo: superView.topAnchor),
             leadingAnchor.constraint(equalTo: superView.leadingAnchor),
             trailingAnchor.constraint(equalTo: superView.trailingAnchor),
             bottomAnchor.constraint(equalTo: superView.bottomAnchor),

@@ -334,9 +334,9 @@
 				DEVELOPMENT_TEAM = B4R97N34U3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "mapProject-ViewCode/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "O aplicativo precisa acessar a localização para mostrar pontos de interesses";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -365,9 +365,9 @@
 				DEVELOPMENT_TEAM = B4R97N34U3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "mapProject-ViewCode/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "O aplicativo precisa acessar a localização para mostrar pontos de interesses";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

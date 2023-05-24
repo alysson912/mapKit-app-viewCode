@@ -7,8 +7,12 @@
 
 import UIKit
 import MapKit
+import CoreLocation 
 
 class HomeScreen: UIView {
+    
+   
+
     
     
     lazy var mapView: MKMapView = {
@@ -16,13 +20,26 @@ class HomeScreen: UIView {
         map.translatesAutoresizingMaskIntoConstraints = false
         map.showsUserLocation = true
         
-        map.clipsToBounds = true
-        map.layer.cornerRadius = 10
         map.setCardShadow()
         return map
     }()
     
+    lazy var searchTextField: UITextField = {
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocorrectionType = .no
+        tf.backgroundColor = .white
+        tf.borderStyle = .roundedRect
+        tf.keyboardType = .emailAddress // defaut
+        tf.placeholder = "buscar:"
+        tf.textColor = .darkGray
+        tf.isSecureTextEntry = false
+        return tf
+    }()
+    
 
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -31,7 +48,9 @@ class HomeScreen: UIView {
     }
     
     private func addViews(){
+    
         addSubview(mapView)
+        mapView.addSubview(searchTextField)
     }
     
     required init?(coder: NSCoder) {
@@ -39,12 +58,15 @@ class HomeScreen: UIView {
     }
     
     private func setupConstraints(){
+      
+        mapView.pin(to: self)
+        
         NSLayoutConstraint.activate([
         
-            mapView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),
-            mapView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            mapView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            mapView.heightAnchor.constraint(equalToConstant: 500),
+            searchTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
+            searchTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 35),
+            searchTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35),
+            searchTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35)
             
         ])
     }
