@@ -29,17 +29,38 @@ class HomeVC: UIViewController {
     private func locationFuncs(){
         locationManager = CLLocationManager()
          locationManager?.delegate = self
-        
+        locationManager?.requestAlwaysAuthorization()// usa localizacao sempre ativa 
          locationManager?.requestWhenInUseAuthorization() // usa localizacao enquanto estiver usando o app
         locationManager?.requestLocation()
 
     }
 
+    private func checkLocationAutorization(){
+        guard let locationManager = locationManager,
+              let location = locationManager.location else { return }
+        
+        switch locationManager.authorizationStatus {
+        case .authorizedWhenInUse, .authorizedAlways:
+            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 750, longitudinalMeters: 750)
+            screen?.mapView.setRegion(region, animated: true)
+        case .denied:
+            print("")
+        case .notDetermined, .restricted:
+            print("")
+        @unknown default:
+            print("")
+        }
+    }
+    
 }
 
 extension HomeVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAutorization()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
